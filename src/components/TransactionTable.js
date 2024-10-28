@@ -1,5 +1,3 @@
-// src/components/TransactionTable.js
-
 import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
 import moment from 'moment';
@@ -47,7 +45,6 @@ function TransactionTable() {
 
   useEffect(() => {
     fetchTransactions();
-    // eslint-disable-next-line
   }, [filters]);
 
   const fetchTransactions = () => {
@@ -56,7 +53,7 @@ function TransactionTable() {
       axios
         .get(`/transactions/${filters.search}`)
         .then((response) => {
-          setTransactions([response.data]); // Wrap the single transaction in an array
+          setTransactions([response.data]); 
           setPagination({
             totalTransactions: 1,
             totalPages: 1,
@@ -73,7 +70,6 @@ function TransactionTable() {
           }
         });
     } else {
-      // Build query parameters for other filters
       const params = {
         page: filters.page,
         limit: filters.limit,
@@ -110,7 +106,7 @@ function TransactionTable() {
     setFilters((prev) => ({
       ...prev,
       [name]: value,
-      page: 1, // Reset to first page when filters change
+      page: 1, 
     }));
   };
 
@@ -161,7 +157,6 @@ function TransactionTable() {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <FormControl fullWidth disabled={!!filters.search}>
-            {/* Disable when searching by ID */}
             <InputLabel>Type</InputLabel>
             <Select
               name="type"
@@ -177,7 +172,6 @@ function TransactionTable() {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <FormControl fullWidth disabled={!!filters.search}>
-            {/* Disable when searching by ID */}
             <InputLabel>Status</InputLabel>
             <Select
               name="status"
@@ -201,7 +195,7 @@ function TransactionTable() {
             onChange={(e) => handleDateChange('startDate', e.target.value)}
             value={filters.startDate}
             fullWidth
-            disabled={!!filters.search} // Disable when searching by ID
+            disabled={!!filters.search}
           />
         </Grid>
         <Grid item xs={6} sm={6} md={1.5}>
@@ -213,7 +207,7 @@ function TransactionTable() {
             onChange={(e) => handleDateChange('endDate', e.target.value)}
             value={filters.endDate}
             fullWidth
-            disabled={!!filters.search} // Disable when searching by ID
+            disabled={!!filters.search} 
           />
         </Grid>
       </Grid>
@@ -317,7 +311,6 @@ function TransactionTable() {
               {transactions.map((tx) => (
                 <TableRow hover role="checkbox" tabIndex={-1} key={tx._id}>
                   <TableCell style={{ minWidth: 150 }}>
-                    {/* Link to transaction details */}
                     <Link to={`/transactions/${tx._id}`}>{tx._id}</Link>
                   </TableCell>
                   <TableCell style={{ minWidth: 150 }}>{tx.amount}</TableCell>
@@ -331,7 +324,6 @@ function TransactionTable() {
             </TableBody>
           </Table>
         </TableContainer>
-        {/* Pagination */}
         {!filters.search && (
           <TablePagination
             rowsPerPageOptions={[10, 25, 100]}
