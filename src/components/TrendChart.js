@@ -1,4 +1,3 @@
-// src/components/TrendCharts.js
 import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
 import { Line } from 'react-chartjs-2';
