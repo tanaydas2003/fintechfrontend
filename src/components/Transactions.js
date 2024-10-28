@@ -9,7 +9,7 @@ const Transactions = () => {
   useEffect(() => {
     const loadTransactions = async () => {
       try {
-        const data = await fetchTransactions(1, 10); // Fetch first page with 10 transactions
+        const data = await fetchTransactions(1, 10);
         setTransactions(data.transactions);
       } catch (err) {
         setError('Failed to fetch transactions');
