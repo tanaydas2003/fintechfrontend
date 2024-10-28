@@ -1,4 +1,3 @@
-// src/components/RealTimeUpdates.js
 import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
 import moment from 'moment';
@@ -9,7 +8,7 @@ function RealTimeUpdates() {
 
   useEffect(() => {
     fetchRecentTransactions();
-    const interval = setInterval(fetchRecentTransactions, 5000); // Update every 5 seconds
+    const interval = setInterval(fetchRecentTransactions, 5000); 
 
     return () => clearInterval(interval);
   }, []);
