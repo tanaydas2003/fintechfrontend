@@ -8,9 +8,9 @@ body {
 .dashboard {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Changed from height: 100vh */
-  overflow-y: auto; /* Allows vertical scrolling */
-  overflow-x: hidden; /* Prevents horizontal overflow of dashboard */
+  min-height: 100vh; 
+  overflow-y: auto; 
+  overflow-x: hidden;
 }
 
 .login-container {
@@ -28,7 +28,7 @@ body {
 
 .transaction-table {
   margin-top: 20px;
-  overflow-x: auto; /* Added to allow horizontal scrolling */
+  overflow-x: auto;
 }
 
 .filters {
