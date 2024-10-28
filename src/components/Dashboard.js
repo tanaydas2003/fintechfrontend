@@ -1,5 +1,3 @@
-// src/components/Dashboard.js
-
 import React, { useState } from 'react';
 import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
@@ -36,14 +34,12 @@ function Dashboard() {
     navigate('/login');
   };
 
-  // State for controlling the mobile drawer
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  // Navigation items
   const navItems = [
     { label: 'Summary', path: '/' },
     { label: 'Transactions', path: '/transactions' },
@@ -52,7 +48,6 @@ function Dashboard() {
     { label: 'Create Transaction', path: '/create-transaction' },
   ];
 
-  // Drawer content
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -114,15 +109,13 @@ function Dashboard() {
           </Button>
         </Toolbar>
       </AppBar>
-
-      {/* Drawer for mobile view */}
       <Box component="nav">
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -133,14 +126,13 @@ function Dashboard() {
         </Drawer>
       </Box>
 
-      {/* Main Content */}
       <Box
         component="main"
         sx={{
           flexGrow: 1,
           p: 3,
           mt: 8,
-          overflowX: 'auto', // Allow horizontal scrolling
+          overflowX: 'auto', 
         }}
       >
         <Routes>
