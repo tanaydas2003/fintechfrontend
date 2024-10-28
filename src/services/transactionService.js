@@ -4,10 +4,10 @@ import Cookies from 'js-cookie';
 const API_URL = 'http://localhost:5000/api/transactions';
 
 export const fetchTransactions = async (page, limit) => {
-  const token = Cookies.get('token'); // Get token from cookies
+  const token = Cookies.get('token'); 
   const config = {
     headers: {
-      Authorization: `Bearer ${token}`, // Include token in request
+      Authorization: `Bearer ${token}`,
     },
   };
 
