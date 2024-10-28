@@ -1,38 +1,51 @@
-.App {
+/* src/App.css */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Changed from height: 100vh */
+  overflow-y: auto; /* Allows vertical scrolling */
+  overflow-x: hidden; /* Prevents horizontal overflow of dashboard */
+}
+
+.login-container {
+  margin-top: 100px;
+}
+
+.login-form {
+  margin-top: 20px;
+}
+
+.summary-card {
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.transaction-table {
+  margin-top: 20px;
+  overflow-x: auto; /* Added to allow horizontal scrolling */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filters {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.real-time-updates {
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.error {
+  color: red;
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
   }
 }
